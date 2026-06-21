@@ -1,0 +1,5 @@
+# IDE
+.DS_Store
+*.swp
+*.swo
+*~

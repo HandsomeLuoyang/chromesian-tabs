@@ -1,0 +1,81 @@
+/* theme.css — 设计令牌:ink & signal。结构用墨色,信号用琥珀。日夜双模。 */
+:root {
+  /* paper / ink — 浅色:暖中性纸面,冷调近黑墨,避免落入"奶油+衬线"套路 */
+  --bg: #efece5;
+  --surface: #faf9f6;
+  --surface-2: #ffffff;
+  --ink: #1b1d1f;
+  --ink-soft: #595d62;
+  --ink-faint: #989ca1;
+  --line: #e0ddd4;
+  --line-strong: #cbc7bc;
+
+  /* signal — 唯一强调色,只用于"活的"信号:激活刻度/搜索高亮/焦点/热度 */
+  --signal: #bf6307;
+  --signal-bright: #e0820a;
+  --signal-soft: rgba(191, 99, 7, 0.12);
+  --on-signal: #ffffff;
+
+  /* highlight(搜索命中) */
+  --hl: rgba(224, 130, 10, 0.22);
+  --hl-text: var(--ink);
+
+  --shadow-sm: 0 1px 2px rgba(28, 25, 20, 0.05);
+  --shadow-md: 0 6px 20px rgba(28, 25, 20, 0.10);
+  --shadow-lg: 0 18px 44px rgba(28, 25, 20, 0.18);
+
+  --radius-sm: 7px;
+  --radius-md: 11px;
+  --radius-lg: 16px;
+
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px;
+  --sp-4: 16px; --sp-5: 24px; --sp-6: 36px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", "Menlo",
+    "Cascadia Code", "Roboto Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15140f;
+    --surface: #1d1c17;
+    --surface-2: #24231d;
+    --ink: #ece9e1;
+    --ink-soft: #a7a499;
+    --ink-faint: #6d6a60;
+    --line: #2a2823;
+    --line-strong: #3a382f;
+
+    --signal: #f2a93b;
+    --signal-bright: #ffbe55;
+    --signal-soft: rgba(242, 169, 59, 0.16);
+    --on-signal: #1b1408;
+
+    --hl: rgba(242, 169, 59, 0.26);
+    --hl-text: var(--ink);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.6);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: light dark; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* hidden 属性必须始终生效,压过组件自身的 display 设置 */
+[hidden] { display: none !important; }

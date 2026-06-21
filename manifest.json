@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "书签主页 · Bookmark Home",
+  "version": "0.1.0",
+  "description": "把书签按文件夹组织成可收缩的标签页,支持别名、按使用频率自动排序与实时搜索,替换 Chrome 新标签页。",
+  "permissions": ["bookmarks", "storage", "favicon"],
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
+}
