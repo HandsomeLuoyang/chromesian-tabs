@@ -15,6 +15,10 @@ const Stats = (() => {
   }
 
   function render(panel) {
+    // 关闭按钮绑定必须在处理数据之前(空状态也得能关)
+    document.getElementById('close-stats').onclick = close;
+    panel.onclick = (e) => { if (e.target === panel) close(); };
+
     const usage = Store.get().usage;
     const entries = [];
     for (const [url, u] of Object.entries(usage)) {
@@ -71,10 +75,6 @@ const Stats = (() => {
             </div>`;
           }).join('')
         : '<div class="empty" style="padding:12px 0;font-size:12px">最近 7 天没有点击</div>');
-
-    // 关闭按钮
-    document.getElementById('close-stats').onclick = close;
-    panel.onclick = (e) => { if (e.target === panel) close(); };
   }
 
   function findTitle(url) {
